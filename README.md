@@ -1,10 +1,10 @@
-# go-metainspector [![Build Status](https://travis-ci.org/fern4lvarez/go-metainspector.png)](https://travis-ci.org/fern4lvarez/go-metainspector) [Documentation online](http://godoc.org/github.com/fern4lvarez/go-metainspector)
+# go-metainspector [![Build Status](https://travis-ci.org/fern4lvarez/go-metainspector.png)](https://travis-ci.org/fern4lvarez/go-metainspector) [Documentation online](http://godoc.org/github.com/fern4lvarez/go-metainspector/metainspector)
 
 Simple web scrapping for Go.
 
 **go-metainspector** is a web scraper package that provides access
 to basic info and meta tags of a given URL.
-It is inspired by the [metainspector gem](https://github.com/jaimeiniesta/metainspector) by [Jaime Iniesta](https://twitter.com/jaimeiniesta) and written completely in Go.
+It is inspired by the [metainspector gem](https://github.com/jaimeiniesta/metainspector) by [Jaime Iniesta](https://twitter.com/jaimeiniesta) and completely written in Go.
 
 ## Install (with GOPATH set on yout machine)
 

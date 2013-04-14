@@ -2,7 +2,7 @@
 go-metainspector is a web scraper package that provides access
 to basic info and meta tags of a given URL.
 It is inspired by the metainspector gem (https://github.com/jaimeiniesta/metainspector)
-and written completely in Go.
+and completely written in Go.
 You will find more info on the README file and the `examples` directory.
 */
 package metainspector
