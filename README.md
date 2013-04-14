@@ -52,7 +52,7 @@ package main
 
 import (
   "fmt"
-  mi "github.com/fern4lvarez/go-metainspector"
+  mi "github.com/fern4lvarez/go-metainspector/metainspector"
 )
 
 func main() {
