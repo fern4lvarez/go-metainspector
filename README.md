@@ -83,11 +83,16 @@ func main() {
 
 ```
 
+##Contribute!
+You all are welcome to take a seat and make a contribution to this repo: reviews, issues, feature suggestions, possible code or functionality enhancements... Anything is appreciated!
+
 ##TODO (aka Nice To Have)
+* Example site as SaaS
 * Mock http requests to speed up unit tests
 * Internal links, External links
 * Map() method wrapping all data
 * Set Timeout optionally (now is 20 secs)
+* Your suggestion <HERE>
 
 ##License
 go-metainspector is MIT licensed, see [here](https://github.com/fern4lvarez/go-metainspector/blob/master/LICENSE)
