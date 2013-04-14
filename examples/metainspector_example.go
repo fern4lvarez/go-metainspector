@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	mi "github.com/fern4lvarez/go-metainspector"
+	mi "github.com/fern4lvarez/go-metainspector/metainspector"
 )
 
 func main() {
@@ -12,7 +12,16 @@ func main() {
 	if err != nil {
 		fmt.Printf("Error: %v", err)
 	} else {
-		fmt.Printf("\nThe url is: %s, the scheme is %s, the host is %s, root url is %s. Title is %s, written in %s, author is %s, description is %s. Charset is %s.", MI.Url(), MI.Scheme(), MI.Host(), MI.RootURL(), MI.Title(), MI.Language(), MI.Author(), MI.Description(), MI.Charset())
+		fmt.Printf("\nThe url is: %s, the scheme is %s, the host is %s, root url is %s. Title is %s, written in %s, author is %s, description is %s. Charset is %s.",
+			MI.Url(),
+			MI.Scheme(),
+			MI.Host(),
+			MI.RootURL(),
+			MI.Title(),
+			MI.Language(),
+			MI.Author(),
+			MI.Description(),
+			MI.Charset())
 		fmt.Printf("\nSubscribe now! ->%s", MI.Feed())
 		fmt.Printf("\nThe links are: %#v", MI.Links())
 		fmt.Printf("\nThe images are: %#v", MI.Images())

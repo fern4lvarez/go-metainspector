@@ -7,6 +7,6 @@ install:
   - go get code.google.com/p/go-html-transform/h5
   - cd $GOPATH/src/code.google.com/p/go-html-transform
   - hg checkout default
-  - go get github.com/fern4lvarez/go-metainspector
+  - go get github.com/fern4lvarez/go-metainspector/metainspector
   - cd $GOPATH/src/github.com/fern4lvarez/go-metainspector
   - go run examples/metainspector_example.go
