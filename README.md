@@ -1,4 +1,4 @@
-# go-metainspector [Documentation online](http://godoc.org/github.com/fern4lvarez/go-metainspector)
+# go-metainspector [![Build Status](https://travis-ci.org/fern4lvarez/go-metainspector.png)](https://travis-ci.org/fern4lvarez/go-metainspector) [Documentation online](http://godoc.org/github.com/fern4lvarez/go-metainspector)
 
 Simple web scrapping for Go.
 
