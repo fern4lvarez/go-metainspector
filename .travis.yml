@@ -1,0 +1,6 @@
+language: go
+install:
+  - go get code.google.com/p/go.net/html
+  - go get code.google.com/p/go-html-transform/h5
+  - go get github.com/fern4lvarez/gonverter
+  - go run examples/metainspector_example.go
