@@ -1,6 +1,6 @@
 # go-metainspector [![Build Status](https://travis-ci.org/fern4lvarez/go-metainspector.png)](https://travis-ci.org/fern4lvarez/go-metainspector) [Documentation online](http://godoc.org/github.com/fern4lvarez/go-metainspector/metainspector)
 
-Simple web scrapping for Go.
+Simple web scraping for Go.
 
 **go-metainspector** is a web scraper package that provides access
 to basic info and meta tags of a given URL.
@@ -8,7 +8,7 @@ It is inspired by the [metainspector gem](https://github.com/jaimeiniesta/metain
 
 ## Install (with GOPATH set on yout machine)
 
-#### Note: This package relies on the [go-html-transform](http://code.google.com/p/go-html-transform) package's latest source, although the `go1` tag is set to an old commit, so it's necessary to checkout the repository in order to get the source code compatible with this package. As soon as the `go1` tag is updated, this package will be available just using `go get`. So far is needed to follow these steps to install it properly. 
+#### Note: This package relies on the [go-html-transform](http://code.google.com/p/go-html-transform) package's latest source, although the `go1` tag is set to an old commit, so it's necessary to checkout the repository in order to get the source code compatible with this package. As soon as the `go1` tag is updated, this package will be available just using `go get`. So far it's needed to follow these steps to install it properly. 
 
 * Step 1: Change dir to your GOPATH
 
@@ -24,7 +24,7 @@ $ go get code.google.com/p/go.net/html
 
 * Step 3: Install Mercurial
 
-* Step 4: Install ´go-html-transform/5´ and checkout to the default branch
+* Step 4: Install ´go-html-transform/h5´ and checkout to the default branch
 
 ```
 $ go get code.google.com/p/go-html-transform/h5
@@ -84,7 +84,7 @@ func main() {
 ```
 
 ##Contribute!
-You all are welcome to take a seat and make a contribution to this repo: reviews, issues, feature suggestions, possible code or functionality enhancements... Anything is appreciated!
+You all are welcome to take a seat and make a contribution to this repo: reviews, issues, feature suggestions, possible code or functionality enhancements... Everything is appreciated!
 
 ##TODO (aka Nice To Have)
 * Example site as SaaS
