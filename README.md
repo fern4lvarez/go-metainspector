@@ -8,41 +8,15 @@ It is inspired by the [metainspector gem](https://github.com/jaimeiniesta/metain
 
 ## Install (with GOPATH set on yout machine)
 
-#### Note: This package relies on the [go-html-transform](http://code.google.com/p/go-html-transform) package's latest source, although the `go1` tag is set to an old commit, so it's necessary to checkout the repository in order to get the source code compatible with this package. As soon as the `go1` tag is updated, this package will be available just using `go get`. So far it's needed to follow these steps to install it properly. 
-
-* Step 1: Change dir to your GOPATH
-
-```
-$ cd GOPATH
-```
-
-* Step 2: Install ´go.net/html´
-
-```
-$ go get code.google.com/p/go.net/html
-```
-
-* Step 3: Install Mercurial
-
-* Step 4: Install ´go-html-transform/h5´ and checkout to the default branch
-
-```
-$ go get code.google.com/p/go-html-transform/h5
-$ cd GOPATH/src/code.google.com/p/go-html-transform
-$ hg checkout default
-$ cd GOPATH
-```
-
-* Step 5: Get the `go-metainspector` package
+* Step 1: Get the `metainspector` package
 
 ```
 go get github.com/fern4lvarez/go-metainspector/metainspector
 ```
 
-* Step 6 (Optional): Run tests
+* Step 2 (Optional): Run tests
 
 ```
-$ cd GOPATH/src/github.com/fern4lvarez/go-metainspector
 $ go test -v ./...
 ```
 
@@ -52,42 +26,54 @@ package main
 
 import (
   "fmt"
-  mi "github.com/fern4lvarez/go-metainspector/metainspector"
+  "github.com/fern4lvarez/go-metainspector/metainspector"
 )
 
 func main() {
-  url := "http://www.cloudcontrol.com"
-
-  MI, err := mi.NewMetaInspector(url)
+  url := "http://www.cloudcontrol.com/pricing"
+  MI, err := metainspector.New(url)
   if err != nil {
     fmt.Printf("Error: %v", err)
   } else {
-    fmt.Printf("\nThe url is: %s, the scheme is %s, the host is %s, root url is %s. Title is %s, written in %s, author is %s, description is %s. Charset is %s.",
-      MI.Url(),
-      MI.Scheme(),
-      MI.Host(),
-      MI.RootURL(),
-      MI.Title(),
-      MI.Language(),
-      MI.Author(),
-      MI.Description(),
-      MI.Charset())
-    fmt.Printf("\nSubscribe now! ->%s", MI.Feed())
-    fmt.Printf("\nThe links are: %#v", MI.Links())
-    fmt.Printf("\nThe images are: %#v", MI.Images())
-    fmt.Printf("\nThe keywords are: %#v", MI.Keywords())
-    fmt.Printf("\nCompatibility: %#v", MI.Compatibility())
+    fmt.Printf("\nURL: %s\n", MI.Url())
+    fmt.Printf("Scheme: %s\n", MI.Scheme())
+    fmt.Printf("Host: %s\n", MI.Host())
+    fmt.Printf("Root: %s\n", MI.RootURL())
+    fmt.Printf("Title: %s\n", MI.Title())
+    fmt.Printf("Language: %s\n", MI.Language())
+    fmt.Printf("Author: %s\n", MI.Author())
+    fmt.Printf("Description: %s\n", MI.Description())
+    fmt.Printf("Charset: %s\n", MI.Charset())
+    fmt.Printf("Feed URL: %s\n", MI.Feed())
+    fmt.Printf("Links: %v\n", MI.Links())
+    fmt.Printf("Images: %v\n", MI.Images())
+    fmt.Printf("Keywords: %v\n", MI.Keywords())
+    fmt.Printf("Compatibility: %v\n", MI.Compatibility())
+    // URL: http://www.cloudcontrol.com/pricing
+    // Scheme: http
+    // Host: www.cloudcontrol.com
+    // Root: http://www.cloudcontrol.com
+    // Title: cloudControl » Cloud App Platform » Pricing & Sign-Up
+    // Language: en
+    // Author: cloudControl GmbH
+    // Description: Cloud hosting secure, easy and fair: Highly available and scalable cloud hosting with no administraton hassle and pay as you go billing
+    // Charset: utf-8
+    // Feed URL: https://www.cloudcontrol.com/blog/feed
+    // Links: [http://www.cloudcontrol.com/ http://www.cloudcontrol.com/pricing http://www.cloudcontrol.com/dev-center http://www.cloudcontrol.com/add-ons https://console.cloudcontrolled.com http://www.cloudcontrol.com/pricing/modal/load_template_free http://www.cloudcontrol.com/pricing/modal/load_template_small http://www.cloudcontrol.com/pricing/modal/load_template_medium http://www.cloudcontrol.com/pricing/modal/load_template_large http://www.cloudcontrol.com/pricing/modal/web_container_show http://www.cloudcontrol.com/pricing/modal/worker_container_show http://www.cloudcontrol.com/pricing/modal/addon_show http://www.cloudcontrol.com/pricing/modal/support_show https://console.cloudcontrolled.com/register https://console.cloudcontrolled.com/register http://www.cloudcontrol.com/contact http://www.cloudcontrol.com/dev-center/Quickstart http://www.cloudcontrol.com/dev-center/Platform Documentation http://status.cloudcontrol.com http://www.cloudcontrol.com/dev-center/support https://console.cloudcontrolled.com http://www.cloudcontrol.com/team http://www.cloudcontrol.com/jobs http://www.cloudcontrol.com/blog http://www.cloudcontrol.com/contact http://www.cloudcontrol.com/add-on-provider-program http://www.cloudcontrol.com/solution-providers http://www.cloudcontrol.com/tos http://www.cloudcontrol.com/privacy-policy http://www.cloudcontrol.com/imprint]
+    // Images: [http://www.cloudcontrol.com/assets/spinner-9bde1d21899a52974160da652c0a6622.gif]
+    // Keywords: [cloudcontrol cloud control cloud hosting cloud computing cloud hosting web-hosting platform as a service paas]
+    // Compatibility: map[IE:edge chrome:1]
   }
-}
-
-
 ```
 
 ##Contribute!
 You all are welcome to take a seat and make a contribution to this repo: reviews, issues, feature suggestions, possible code or functionality enhancements... Everything is appreciated!
 
 ##TODO (aka Nice To Have)
-* Example site as SaaS
+* Extend documentation
+* Write a CHANGELOG
+* Command line interface
+* Example site (written in Go, of course)
 * Mock http requests to speed up unit tests
 * Internal links, External links
 * Map() method wrapping all data

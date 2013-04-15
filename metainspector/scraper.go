@@ -10,7 +10,7 @@ import (
 	"time"
 )
 
-type Scraper struct {
+type scraper struct {
 	title         string
 	language      string
 	author        string
@@ -83,8 +83,8 @@ func timeoutDialer(secs int) func(net, addr string) (c net.Conn, err error) {
 }
 
 // newScraper parses the given url and scrapes the site, returning 
-// a Scraper object with all the site info and meta tags
-func newScraper(u *url.URL) (*Scraper, error) {
+// a scraper object with all the site info and meta tags
+func newScraper(u *url.URL, timeout int) (*scraper, error) {
 	var title string
 	var language string
 	var author string
@@ -135,7 +135,7 @@ func newScraper(u *url.URL) (*Scraper, error) {
 
 	cl := http.Client{
 		Transport: &http.Transport{
-			Dial: timeoutDialer(20),
+			Dial: timeoutDialer(timeout),
 		},
 	}
 
@@ -151,7 +151,7 @@ func newScraper(u *url.URL) (*Scraper, error) {
 	}
 	tree.Walk(scrpr)
 
-	return &Scraper{title,
+	return &scraper{title,
 		language,
 		author,
 		description,
