@@ -1,7 +1,7 @@
 package metainspector
 
 // Export private methods for unit testing purposes
-var ExportRoot = newRoot
+var ExportRoot = root
 var ExportFixURL = fixURL
 var ExportFindCharset = findCharset
 var ExportMapifyStr = mapifyStr

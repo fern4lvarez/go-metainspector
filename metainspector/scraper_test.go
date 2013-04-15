@@ -107,7 +107,7 @@ func TestNewScraper(t *testing.T) {
 		t.Errorf("%v", err)
 	}
 
-	_, err = ExportNewScraper(u)
+	_, err = ExportNewScraper(u, 20)
 	if err != nil {
 		t.Errorf(msgFail, "scraper", "Scraper", err)
 	}

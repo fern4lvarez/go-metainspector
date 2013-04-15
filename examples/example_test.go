@@ -1,13 +1,13 @@
-package main
+package metainspector
 
 import (
 	"fmt"
-	"github.com/fern4lvarez/go-metainspector/metainspector"
+	"log"
 )
 
-func main() {
+func ExampleMetaInspector() {
 	url := "http://www.cloudcontrol.com/pricing"
-	MI, err := metainspector.New(url)
+	MI, err := New(url)
 	if err != nil {
 		fmt.Printf("Error: %v", err)
 	} else {
@@ -25,6 +25,7 @@ func main() {
 		fmt.Printf("Images: %v\n", MI.Images())
 		fmt.Printf("Keywords: %v\n", MI.Keywords())
 		fmt.Printf("Compatibility: %v\n", MI.Compatibility())
+		// Output: 
 		// URL: http://www.cloudcontrol.com/pricing
 		// Scheme: http
 		// Host: www.cloudcontrol.com

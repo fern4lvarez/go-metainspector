@@ -13,18 +13,21 @@ import (
 	"strings"
 )
 
-// newRoot returns the root URL, with no path on it
-func newRoot(u *url.URL) string {
+// root returns the root URL, with no path on it
+func root(u *url.URL) string {
 	return u.Scheme + "://" + u.Host
 }
 
 // fixURL adds the Scheme to the URL and 
-// and fixes the Host and Path
+// and fixes the Host and Path 
+// in case Scheme is empty
 func fixURL(u *url.URL) *url.URL {
-	s := strings.Split(u.String(), "/")
-	u.Scheme = "http"
-	u.Host = s[0]
-	u.Path = u.Path[len(s[0]):]
+	if u.Scheme == "" {
+		s := strings.Split(u.String(), "/")
+		u.Scheme = "http"
+		u.Host = s[0]
+		u.Path = u.Path[len(s[0]):]
+	}
 	return u
 }
 
@@ -45,8 +48,8 @@ type MetaInspector struct {
 	compatibility map[string]string
 }
 
-// NewMetaInspector creates an object with all the URL scraped info
-func NewMetaInspector(uri string) (*MetaInspector, error) {
+// New creates an object with all the URL scraped info
+func New(uri string) (*MetaInspector, error) {
 	if uri == "" {
 		return nil, errors.New("Url is empty!")
 	}
@@ -56,11 +59,7 @@ func NewMetaInspector(uri string) (*MetaInspector, error) {
 		return nil, err
 	}
 
-	if u.Scheme == "" {
-		u = fixURL(u)
-	}
-
-	scraper, err := newScraper(u)
+	scraper, err := newScraper(fixURL(u), 20)
 	if err != nil {
 		return nil, err
 	}
@@ -68,7 +67,7 @@ func NewMetaInspector(uri string) (*MetaInspector, error) {
 	return &MetaInspector{uri,
 		u.Scheme,
 		u.Host,
-		newRoot(u),
+		root(u),
 		scraper.title,
 		scraper.language,
 		scraper.author,
