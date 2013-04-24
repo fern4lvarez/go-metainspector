@@ -72,7 +72,7 @@ func main() {
 
 ### CLI
 You can use the go-metainspector as a command line tool.
-*Note:* Once you have installed the package, you might want to set an alias for the CLI: add `alias ranking=go-metainspector` or similar to your appropiated dotfile.
+*Note:* Once you have installed the package, you might want to set an alias for the CLI: add `alias metainspect=go-metainspector` or similar to your appropiated dotfile.
 
 Simple to use!
 
@@ -95,10 +95,10 @@ www.cloudcontrol.com
 ----> Images: http://www.cloudcontrol.com/assets/spinner-9bde1d21899a52974160da652c0a6622.gif https://s3-eu-west-1.amazonaws.com/cctrl-www-production/use_cases/logos/000/000/006/thumb/vamos-logo-rgb-vertical.png?1360313785 https://s3-eu-west-1.amazonaws.com/cctrl-www-production/use_cases/logos/000/000/008/thumb/logo.png?1362736875 https://s3-eu-west-1.amazonaws.com/cctrl-www-production/use_cases/logos/000/000/002/thumb/snipclip_logo_2011_rgb.png?1359481602 https://s3-eu-west-1.amazonaws.com/cctrl-www-production/use_cases/logos/000/000/004/thumb/ormigo.png?1359481203 https://s3-eu-west-1.amazonaws.com/cctrl-www-assets/add-ons/blitz.png https://s3-eu-west-1.amazonaws.com/cctrl-www-assets/add-ons/sendgrid.png https://s3-eu-west-1.amazonaws.com/cctrl-www-production/solution_providers/logos/000/000/013/small/emind_klein.png?1364402125 ...
 ```
 
-´-u´ is optional though:
+`-u` is optional though:
 
 ```
-$ go-metainspector -u www.cloudcontrol.com
+$ go-metainspector www.cloudcontrol.com
 ----> Title: cloudControl » Cloud App Platform » supercharging development
 ----> Author: cloudControl GmbH
 ...
