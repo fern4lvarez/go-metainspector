@@ -40,6 +40,7 @@ type MetaInspector struct {
 	language      string
 	author        string
 	description   string
+	generator     string
 	feed          string
 	charset       string
 	links         []string
@@ -72,6 +73,7 @@ func New(uri string) (*MetaInspector, error) {
 		scraper.language,
 		scraper.author,
 		scraper.description,
+		scraper.generator,
 		scraper.feed,
 		scraper.charset,
 		scraper.links,
@@ -118,6 +120,11 @@ func (m MetaInspector) Author() string {
 // Description of the site
 func (m MetaInspector) Description() string {
 	return m.description
+}
+
+// Generator of the site
+func (m MetaInspector) Generator() string {
+	return m.generator
 }
 
 // Feed link of the site
