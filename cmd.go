@@ -55,6 +55,7 @@ func prettyspector(mi *metainspector.MetaInspector, a bool) {
 	sprintIfExists("Title", mi.Title())
 	sprintIfExists("Author", mi.Author())
 	sprintIfExists("Description", mi.Description())
+	sprintIfExists("Generator", mi.Generator())
 	sprintIfExists("Charset", mi.Charset())
 	sprintIfExists("Language", mi.Language())
 	sprintIfExists("Feed URL", mi.Feed())

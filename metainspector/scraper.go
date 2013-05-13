@@ -15,6 +15,7 @@ type scraper struct {
 	language      string
 	author        string
 	description   string
+	generator     string
 	feed          string
 	charset       string
 	links         []string
@@ -89,6 +90,7 @@ func newScraper(u *url.URL, timeout int) (*scraper, error) {
 	var language string
 	var author string
 	var description string
+	var generator string
 	var feed string
 	charset := "utf-8"
 	links := make([]string, 0)
@@ -121,6 +123,8 @@ func newScraper(u *url.URL, timeout int) (*scraper, error) {
 				keywords = strings.Split(findAttribute(n, "content"), ", ")
 			case "description":
 				description = findAttribute(n, "content")
+			case "generator":
+				generator = findAttribute(n, "content")
 			}
 
 			httpEquiv := findAttribute(n, "http-equiv")
@@ -155,6 +159,7 @@ func newScraper(u *url.URL, timeout int) (*scraper, error) {
 		language,
 		author,
 		description,
+		generator,
 		feed,
 		charset,
 		links,
