@@ -42,6 +42,7 @@ var mi = MetaInspector{url: "http://www.cloudcontrol.com",
 	language:      "en",
 	author:        "CloudControl",
 	description:   "PaaS company",
+	generator:     "some generator",
 	feed:          "http://www.cloudcontrol.com/feed",
 	charset:       "utf-8",
 	links:         []string{"http://foo.bar", "https://bar.foo"},
@@ -95,6 +96,12 @@ func TestAuthor(t *testing.T) {
 func TestDescription(t *testing.T) {
 	if description := mi.Description(); description != "PaaS company" {
 		t.Errorf(msgFail, "Description", "PaaS company", description)
+	}
+}
+
+func TestGenerator(t *testing.T) {
+	if generator := mi.Generator(); generator != "some generator" {
+		t.Errorf(msgFail, "Generator", "some generator", generator)
 	}
 }
 
