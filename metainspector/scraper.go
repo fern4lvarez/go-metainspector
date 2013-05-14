@@ -63,6 +63,9 @@ func findAttribute(n *html.Node, key string) string {
 // the root URL
 func addElement(elems []string, u *url.URL, n *html.Node, attr string) []string {
 	if val := findAttribute(n, attr); val != "" {
+		if strings.HasPrefix(val, "//") {
+			val = u.Scheme + ":" + val
+		}
 		if strings.Index(val, "/") == 0 {
 			val = u.Scheme + "://" + u.Host + val
 		}
