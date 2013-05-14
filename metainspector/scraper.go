@@ -66,7 +66,7 @@ func addElement(elems []string, u *url.URL, n *html.Node, attr string) []string 
 		if strings.HasPrefix(val, "//") {
 			val = u.Scheme + ":" + val
 		}
-		if strings.Index(val, "/") == 0 {
+		if strings.HasPrefix(val, "/") || strings.HasPrefix(val, "#") {
 			val = u.Scheme + "://" + u.Host + val
 		}
 		elems = append(elems, val)

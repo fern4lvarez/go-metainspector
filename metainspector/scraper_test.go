@@ -85,6 +85,16 @@ func TestAddElement(t *testing.T) {
 				Namespace: "",
 				Key:       "href",
 				Val:       "//console.cloudcontrol.com"}}}
+	n4 := &html.Node{
+		Type:      3,
+		DataAtom:  1,
+		Data:      "a",
+		Namespace: "",
+		Attr: []html.Attribute{
+			html.Attribute{
+				Namespace: "",
+				Key:       "href",
+				Val:       "#part"}}}
 
 	u, err := url.Parse("http://www.cloudcontrol.com")
 	if err != nil {
@@ -103,6 +113,10 @@ func TestAddElement(t *testing.T) {
 
 	if e3 := fmt.Sprintf("%v", ExportAddElement(elems, u, n3, attr)); e3 != "[http://console.cloudcontrol.com]" {
 		t.Errorf(msgFail, "External Link 2", "[http://console.cloudcontrol.com]", e3)
+	}
+
+	if e4 := fmt.Sprintf("%v", ExportAddElement(elems, u, n4, attr)); e4 != "[http://www.cloudcontrol.com#part]" {
+		t.Errorf(msgFail, "Internal Link #", "[http://www.cloudcontrol.com#part]", e4)
 	}
 }
 
