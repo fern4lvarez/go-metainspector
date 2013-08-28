@@ -32,7 +32,7 @@ func findCharset(content string) string {
 	return ""
 }
 
-// mapifyStr converts a string with the format `foo=bar,ro=pi` 
+// mapifyStr converts a string with the format `foo=bar,ro=pi`
 // in a map like map[foo:bar ro:pi]
 func mapifyStr(content string) map[string]string {
 	m := make(map[string]string)
@@ -57,18 +57,22 @@ func findAttribute(n *html.Node, key string) string {
 	return ""
 }
 
-// addElement adds a string to a given string slice if matches the 
+// addElement adds a string to a given string slice if matches the
 // given attribute within the given Node.
-// If starts with slash means that is a external element, so is appended to 
+// If starts with slash or hashmeans that is a external element, so is appended to
 // the root URL
+// If it doesn't fit the previous case and it does not have a protocol prefix,
+// then it is appended to the root URL as well
 func addElement(elems []string, u *url.URL, n *html.Node, attr string) []string {
 	if val := findAttribute(n, attr); val != "" {
 		if strings.HasPrefix(val, "//") {
 			val = u.Scheme + ":" + val
-		}
-		if strings.HasPrefix(val, "/") || strings.HasPrefix(val, "#") {
+		} else if strings.HasPrefix(val, "/") || strings.HasPrefix(val, "#") {
 			val = u.Scheme + "://" + u.Host + val
+		} else if !hasProtocolAsPrefix(val) {
+			val = u.Scheme + "://" + u.Host + "/" + val
 		}
+
 		elems = append(elems, val)
 	}
 	return elems
@@ -86,7 +90,7 @@ func timeoutDialer(secs int) func(net, addr string) (c net.Conn, err error) {
 	}
 }
 
-// newScraper parses the given url and scrapes the site, returning 
+// newScraper parses the given url and scrapes the site, returning
 // a scraper object with all the site info and meta tags
 func newScraper(u *url.URL, timeout int) (*scraper, error) {
 	var title string
@@ -169,4 +173,13 @@ func newScraper(u *url.URL, timeout int) (*scraper, error) {
 		images,
 		keywords,
 		compatibility}, nil
+}
+
+// hasProtocolAsPrefix returns true if the value belongs
+// to some protocol
+func hasProtocolAsPrefix(val string) bool {
+	return strings.HasPrefix(val, "http://") ||
+		strings.HasPrefix(val, "https://") ||
+		strings.HasPrefix(val, "ftp://") ||
+		strings.HasPrefix(val, "s3://")
 }

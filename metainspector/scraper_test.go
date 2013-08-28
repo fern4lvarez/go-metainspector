@@ -140,3 +140,24 @@ func TestNewScraper(t *testing.T) {
 		t.Errorf(msgFail, "scraper", "Scraper", err)
 	}
 }
+
+func TestHasProtocolAsPrefix(t *testing.T) {
+	val1 := "http://example.com/image.jpg"
+	b1 := ExportHasProtocolAsPrefix(val1)
+	if !b1 {
+		t.Errorf(msgFail, "HasProtocolAsPrefix", true, false)
+	}
+
+	val2 := "image.jpg"
+	b2 := ExportHasProtocolAsPrefix(val2)
+	if b2 {
+		t.Errorf(msgFail, "HasProtocolAsPrefix", false, true)
+	}
+
+	val3 := "https://www.example.com/image.jpg"
+	b3 := ExportHasProtocolAsPrefix(val3)
+	if b3 {
+		t.Errorf(msgFail, "HasProtocolAsPrefix", true, false)
+	}
+
+}

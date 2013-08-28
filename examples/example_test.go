@@ -25,7 +25,7 @@ func ExampleMetaInspector() {
 		fmt.Printf("Images: %v\n", MI.Images())
 		fmt.Printf("Keywords: %v\n", MI.Keywords())
 		fmt.Printf("Compatibility: %v\n", MI.Compatibility())
-		// Output: 
+		// Output:
 		// URL: http://www.cloudcontrol.com/pricing
 		// Scheme: http
 		// Host: www.cloudcontrol.com

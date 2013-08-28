@@ -9,3 +9,4 @@ var ExportFindAttribute = findAttribute
 var ExportAddElement = addElement
 var ExportTimeoutDialer = timeoutDialer
 var ExportNewScraper = newScraper
+var ExportHasProtocolAsPrefix = hasProtocolAsPrefix

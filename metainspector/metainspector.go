@@ -18,8 +18,8 @@ func root(u *url.URL) string {
 	return u.Scheme + "://" + u.Host
 }
 
-// fixURL adds the Scheme to the URL and 
-// and fixes the Host and Path 
+// fixURL adds the Scheme to the URL and
+// and fixes the Host and Path
 // in case Scheme is empty
 func fixURL(u *url.URL) *url.URL {
 	if u.Scheme == "" {
