@@ -156,7 +156,7 @@ func TestHasProtocolAsPrefix(t *testing.T) {
 
 	val3 := "https://www.example.com/image.jpg"
 	b3 := ExportHasProtocolAsPrefix(val3)
-	if b3 {
+	if !b3 {
 		t.Errorf(msgFail, "HasProtocolAsPrefix", true, false)
 	}
 
