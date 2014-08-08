@@ -6,12 +6,12 @@ Simple web metadata scraping in Go.
 to basic info and meta tags of a given URL.
 It is inspired by the [metainspector gem](https://github.com/jaimeiniesta/metainspector) by [Jaime Iniesta](https://twitter.com/jaimeiniesta) and completely written in Go.
 
-## Install (with GOPATH set on yout machine)
+## Install
 
 * Step 1: Get the `metainspector` package
 
 ```
-go get github.com/fern4lvarez/go-metainspector/metainspector
+go get -u github.com/fern4lvarez/go-metainspector/metainspector
 ```
 
 * Step 2 (Optional): Run tests
