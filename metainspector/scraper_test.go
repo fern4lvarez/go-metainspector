@@ -1,10 +1,11 @@
 package metainspector
 
 import (
-	"code.google.com/p/go.net/html"
 	"fmt"
 	"net/url"
 	"testing"
+
+	"code.google.com/p/go.net/html"
 )
 
 func TestFindCharset(t *testing.T) {

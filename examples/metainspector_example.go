@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+
 	"github.com/fern4lvarez/go-metainspector/metainspector"
 )
 

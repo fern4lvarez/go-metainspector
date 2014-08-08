@@ -148,3 +148,41 @@ func TestCompatibility(t *testing.T) {
 		t.Errorf(msgFail, "Compatibility", c2, c1)
 	}
 }
+
+func ExampleMetaInspector() {
+	url := "http://www.cloudcontrol.com/pricing"
+	MI, err := New(url)
+	if err != nil {
+		fmt.Printf("Error: %v", err)
+	} else {
+		fmt.Printf("\nURL: %s\n", MI.Url())
+		fmt.Printf("Scheme: %s\n", MI.Scheme())
+		fmt.Printf("Host: %s\n", MI.Host())
+		fmt.Printf("Root: %s\n", MI.RootURL())
+		fmt.Printf("Title: %s\n", MI.Title())
+		fmt.Printf("Language: %s\n", MI.Language())
+		fmt.Printf("Author: %s\n", MI.Author())
+		fmt.Printf("Description: %s\n", MI.Description())
+		fmt.Printf("Charset: %s\n", MI.Charset())
+		fmt.Printf("Feed URL: %s\n", MI.Feed())
+		fmt.Printf("Links: %v\n", MI.Links())
+		fmt.Printf("Images: %v\n", MI.Images())
+		fmt.Printf("Keywords: %v\n", MI.Keywords())
+		fmt.Printf("Compatibility: %v\n", MI.Compatibility())
+		// Output:
+		//URL: http://www.cloudcontrol.com/pricing
+		//Scheme: http
+		//Host: www.cloudcontrol.com
+		//Root: http://www.cloudcontrol.com
+		//Title: cloudControl » Cloud App Platform » Pricing
+		//Language: en
+		//Author: cloudControl GmbH
+		//Description: Cloud hosting secure, easy and fair: Highly available and scalable cloud hosting with no administraton hassle and pay as you go billing
+		//Charset: utf-8
+		//Feed URL: https://www.cloudcontrol.com/blog.rss
+		//Links: [http://www.cloudcontrol.com/console/account/{{user.username}} http://www.cloudcontrol.com/ http://www.cloudcontrol.com/pricing http://www.cloudcontrol.com/dev-center http://www.cloudcontrol.com/add-ons http://www.cloudcontrol.com/blog http://www.cloudcontrol.com/console http://www.cloudcontrol.com/pricing/calculator http://www.cloudcontrol.com#included http://www.cloudcontrol.com#memoryhours http://www.cloudcontrol.com#included http://www.cloudcontrol.com#memoryhours http://www.cloudcontrol.com#included http://www.cloudcontrol.com#memoryhours http://www.cloudcontrol.com#included http://www.cloudcontrol.com#memoryhours http://www.cloudcontrol.com/sign-up http://www.cloudcontrol.com/pricing/calculator http://www.cloudcontrol.com/sign-up?plan=Start-up http://www.cloudcontrol.com/pricing/calculator?plan=startup http://www.cloudcontrol.com/sign-up?plan=Business http://www.cloudcontrol.com/pricing/calculator?plan=business http://www.cloudcontrol.com/sign-up?plan=Business%2B http://www.cloudcontrol.com/pricing/calculator?plan=businessplus http://www.cloudcontrol.com/contact http://www.cloudcontrol.com#plantable http://www.cloudcontrol.com#plantable http://www.cloudcontrol.com/dev-center/Quickstart http://www.cloudcontrol.com/dev-center/Platform Documentation http://status.cloudcontrol.com http://www.cloudcontrol.com/dev-center/support http://www.cloudcontrol.com/console http://www.cloudcontrol.com/team http://www.cloudcontrol.com/jobs http://www.cloudcontrol.com/blog http://www.cloudcontrol.com/contact http://www.cloudcontrol.com/add-on-provider-program http://www.cloudcontrol.com/solution-provider-program http://www.whitelabelpaas.info http://www.cloudcontrol.com/tos http://www.cloudcontrol.com/privacy-policy http://www.cloudcontrol.com/imprint]
+		//Images: [http://www.cloudcontrol.com/assets/spinner-6f9309f477dcc1d3c21cd21ce44dc8b2.gif]
+		//Keywords: [cloudcontrol cloud control cloud hosting cloud computing cloud hosting web-hosting platform as a service paas]
+		//Compatibility: map[IE:edge chrome:1]
+	}
+}

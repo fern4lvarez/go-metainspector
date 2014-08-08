@@ -3,8 +3,9 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/fern4lvarez/go-metainspector/metainspector"
 	"os"
+
+	"github.com/fern4lvarez/go-metainspector/metainspector"
 )
 
 // exit prints  a message and exit the current program
@@ -34,7 +35,7 @@ func sprintIfExists(n string, v string) {
 	}
 }
 
-// sprintIfExists prints pretty lines if the slice
+// aprintIfExists prints pretty lines if the slice
 // is not empty
 func aprintIfExists(n string, v []string, a bool) {
 	if len(v) != 0 {

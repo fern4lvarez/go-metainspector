@@ -1,13 +1,14 @@
 package metainspector
 
 import (
-	"code.google.com/p/go-html-transform/h5"
-	"code.google.com/p/go.net/html"
 	"net"
 	"net/http"
 	"net/url"
 	"strings"
 	"time"
+
+	"code.google.com/p/go-html-transform/h5"
+	"code.google.com/p/go.net/html"
 )
 
 type scraper struct {
