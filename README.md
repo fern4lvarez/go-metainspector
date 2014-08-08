@@ -1,7 +1,6 @@
-# go-metainspector [![Build Status](https://travis-ci.org/fern4lvarez/go-metainspector.png)](https://travis-ci.org/fern4lvarez/go-metainspector) 
-[Documentation online](http://godoc.org/github.com/fern4lvarez/go-metainspector/metainspector)
+# go-metainspector [![Build Status](https://travis-ci.org/fern4lvarez/go-metainspector.png)](https://travis-ci.org/fern4lvarez/go-metainspector)[![GoDoc](https://godoc.org/github.com/fern4lvarez/go-metainspector/metainspector?status.png)](http://godoc.org/github.com/fern4lvarez/go-metainspector/metainspector)
 
-Simple web scraping for Go.
+Simple web metadata scraping in Go.
 
 **go-metainspector** is a web scraper package that provides access
 to basic info and meta tags of a given URL.
@@ -18,7 +17,7 @@ go get github.com/fern4lvarez/go-metainspector/metainspector
 * Step 2 (Optional): Run tests
 
 ```
-$ go test -v ./...
+$ go test -v -cover ./...
 ```
 
 ##Usage
@@ -30,6 +29,7 @@ package main
 
 import (
   "fmt"
+
   "github.com/fern4lvarez/go-metainspector/metainspector"
 )
 
@@ -53,26 +53,12 @@ func main() {
     fmt.Printf("Images: %v\n", MI.Images())
     fmt.Printf("Keywords: %v\n", MI.Keywords())
     fmt.Printf("Compatibility: %v\n", MI.Compatibility())
-    // URL: http://www.cloudcontrol.com/pricing
-    // Scheme: http
-    // Host: www.cloudcontrol.com
-    // Root: http://www.cloudcontrol.com
-    // Title: cloudControl » Cloud App Platform » Pricing & Sign-Up
-    // Language: en
-    // Author: cloudControl GmbH
-    // Description: Cloud hosting secure, easy and fair: Highly available and scalable cloud hosting with no administraton hassle and pay as you go billing
-    // Charset: utf-8
-    // Feed URL: https://www.cloudcontrol.com/blog/feed
-    // Links: [http://www.cloudcontrol.com/ http://www.cloudcontrol.com/pricing http://www.cloudcontrol.com/dev-center http://www.cloudcontrol.com/add-ons https://console.cloudcontrolled.com http://www.cloudcontrol.com/pricing/modal/load_template_free http://www.cloudcontrol.com/pricing/modal/load_template_small http://www.cloudcontrol.com/pricing/modal/load_template_medium http://www.cloudcontrol.com/pricing/modal/load_template_large http://www.cloudcontrol.com/pricing/modal/web_container_show http://www.cloudcontrol.com/pricing/modal/worker_container_show http://www.cloudcontrol.com/pricing/modal/addon_show http://www.cloudcontrol.com/pricing/modal/support_show https://console.cloudcontrolled.com/register https://console.cloudcontrolled.com/register http://www.cloudcontrol.com/contact http://www.cloudcontrol.com/dev-center/Quickstart http://www.cloudcontrol.com/dev-center/Platform Documentation http://status.cloudcontrol.com http://www.cloudcontrol.com/dev-center/support https://console.cloudcontrolled.com http://www.cloudcontrol.com/team http://www.cloudcontrol.com/jobs http://www.cloudcontrol.com/blog http://www.cloudcontrol.com/contact http://www.cloudcontrol.com/add-on-provider-program http://www.cloudcontrol.com/solution-providers http://www.cloudcontrol.com/tos http://www.cloudcontrol.com/privacy-policy http://www.cloudcontrol.com/imprint]
-    // Images: [http://www.cloudcontrol.com/assets/spinner-9bde1d21899a52974160da652c0a6622.gif]
-    // Keywords: [cloudcontrol cloud control cloud hosting cloud computing cloud hosting web-hosting platform as a service paas]
-    // Compatibility: map[IE:edge chrome:1]
   }
 ```
 
 ### CLI
 You can use the go-metainspector as a command line tool.
-*Note:* Once you have installed the package, you might want to set an alias for the CLI: add `alias metainspect=go-metainspector` or similar to your appropiated dotfile.
+*Note:* Once you have installed the package, you might want to set an alias for the CLI: add `alias metainspect=go-metainspector` or similar in your appropiated dotfile.
 
 Simple to use!
 
@@ -119,13 +105,15 @@ $ go-metainspector -u www.cloudcontrol.com -all
 ----> Images: http://www.cloudcontrol.com/assets/spinner-9bde1d21899a52974160da652c0a6622.gif https://s3-eu-west-1.amazonaws.com/cctrl-www-assets/add-ons/sendgrid.png https://s3-eu-west-1.amazonaws.com/cctrl-www-assets/add-ons/newrelic.png https://s3-eu-west-1.amazonaws.com/cctrl-www-production/use_cases/logos/000/000/004/thumb/ormigo.png?1359481203 https://s3-eu-west-1.amazonaws.com/cctrl-www-production/use_cases/logos/000/000/006/thumb/vamos-logo-rgb-vertical.png?1360313785 https://s3-eu-west-1.amazonaws.com/cctrl-www-production/use_cases/logos/000/000/003/thumb/AFP-logo.png?1359481038 https://s3-eu-west-1.amazonaws.com/cctrl-www-production/use_cases/logos/000/000/001/thumb/adcloud.png?1359563276 https://s3-eu-west-1.amazonaws.com/cctrl-www-production/use_cases/logos/000/000/005/thumb/Kinderfee_Logo_Claim.png?1359481378 https://s3-eu-west-1.amazonaws.com/cctrl-www-production/use_cases/logos/000/000/002/thumb/snipclip_logo_2011_rgb.png?1359481602 
 ```
 
+### Web
+You can use go-metainspector via web. Check out and run the [`go-metainspector-site`](https://github.com/fern4lvarez/go-metainspector-site) or just try it out: http://gometainspector.cloudcontrolled.com
+
 ##Contribute!
 You all are welcome to take a seat and make a contribution to this repo: reviews, issues, feature suggestions, possible code or functionality enhancements... Everything is appreciated!
 
 ##TODO (aka Nice To Have)
 * Extend documentation
 * Write a CHANGELOG
-* Example site (written in Go, of course)
 * Mock http requests to speed up unit tests
 * Internal links, External links
 * Map() method wrapping all data
