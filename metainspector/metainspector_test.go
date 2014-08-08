@@ -168,7 +168,6 @@ func ExampleMetaInspector() {
 		fmt.Printf("Links: %v\n", MI.Links())
 		fmt.Printf("Images: %v\n", MI.Images())
 		fmt.Printf("Keywords: %v\n", MI.Keywords())
-		fmt.Printf("Compatibility: %v\n", MI.Compatibility())
 		// Output:
 		//URL: http://www.cloudcontrol.com/pricing
 		//Scheme: http
@@ -183,6 +182,5 @@ func ExampleMetaInspector() {
 		//Links: [http://www.cloudcontrol.com/console/account/{{user.username}} http://www.cloudcontrol.com/ http://www.cloudcontrol.com/pricing http://www.cloudcontrol.com/dev-center http://www.cloudcontrol.com/add-ons http://www.cloudcontrol.com/blog http://www.cloudcontrol.com/console http://www.cloudcontrol.com/pricing/calculator http://www.cloudcontrol.com#included http://www.cloudcontrol.com#memoryhours http://www.cloudcontrol.com#included http://www.cloudcontrol.com#memoryhours http://www.cloudcontrol.com#included http://www.cloudcontrol.com#memoryhours http://www.cloudcontrol.com#included http://www.cloudcontrol.com#memoryhours http://www.cloudcontrol.com/sign-up http://www.cloudcontrol.com/pricing/calculator http://www.cloudcontrol.com/sign-up?plan=Start-up http://www.cloudcontrol.com/pricing/calculator?plan=startup http://www.cloudcontrol.com/sign-up?plan=Business http://www.cloudcontrol.com/pricing/calculator?plan=business http://www.cloudcontrol.com/sign-up?plan=Business%2B http://www.cloudcontrol.com/pricing/calculator?plan=businessplus http://www.cloudcontrol.com/contact http://www.cloudcontrol.com#plantable http://www.cloudcontrol.com#plantable http://www.cloudcontrol.com/dev-center/Quickstart http://www.cloudcontrol.com/dev-center/Platform Documentation http://status.cloudcontrol.com http://www.cloudcontrol.com/dev-center/support http://www.cloudcontrol.com/console http://www.cloudcontrol.com/team http://www.cloudcontrol.com/jobs http://www.cloudcontrol.com/blog http://www.cloudcontrol.com/contact http://www.cloudcontrol.com/add-on-provider-program http://www.cloudcontrol.com/solution-provider-program http://www.whitelabelpaas.info http://www.cloudcontrol.com/tos http://www.cloudcontrol.com/privacy-policy http://www.cloudcontrol.com/imprint]
 		//Images: [http://www.cloudcontrol.com/assets/spinner-6f9309f477dcc1d3c21cd21ce44dc8b2.gif]
 		//Keywords: [cloudcontrol cloud control cloud hosting cloud computing cloud hosting web-hosting platform as a service paas]
-		//Compatibility: map[IE:edge chrome:1]
 	}
 }
