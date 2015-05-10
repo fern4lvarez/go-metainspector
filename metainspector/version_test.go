@@ -6,7 +6,7 @@ import (
 
 func TestVersion(t *testing.T) {
 	v := Version()
-	if v != "0.2.6" {
-		t.Errorf(msgFail, "Version", "0.2.6", v)
+	if v != "0.2.7" {
+		t.Errorf(msgFail, "Version", "0.2.7", v)
 	}
 }

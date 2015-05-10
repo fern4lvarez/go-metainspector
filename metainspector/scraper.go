@@ -7,8 +7,8 @@ import (
 	"strings"
 	"time"
 
-	"code.google.com/p/go-html-transform/h5"
-	"code.google.com/p/go.net/html"
+	"go.marzhillstudios.com/pkg/go-html-transform/h5"
+	"golang.org/x/net/html"
 )
 
 type scraper struct {
