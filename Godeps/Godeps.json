@@ -1,16 +1,15 @@
 {
 	"ImportPath": "github.com/fern4lvarez/go-metainspector",
-	"GoVersion": "go1.3",
+	"GoVersion": "go1.4.2",
 	"Deps": [
 		{
-			"ImportPath": "code.google.com/p/go-html-transform/h5",
-			"Comment": "go1-18",
-			"Rev": "a658ae052533fba7df942578496bcc888b21d838"
+			"ImportPath": "go.marzhillstudios.com/pkg/go-html-transform/h5",
+			"Comment": "v0.1.1-59",
+			"Rev": "f8a6a5573de726fafd18fe127babe9d49d2a7fce"
 		},
 		{
-			"ImportPath": "code.google.com/p/go.net/html",
-			"Comment": "null-47",
-			"Rev": "4e0dc83f5a857e4d4f9455d1073eff284fdee117"
+			"ImportPath": "golang.org/x/net/html",
+			"Rev": "e0403b4e005737430c05a57aac078479844f919c"
 		}
 	]
 }
