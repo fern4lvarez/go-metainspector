@@ -1,12 +1,10 @@
 package metainspector
 
-import (
-	"testing"
-)
+import "testing"
 
 func TestVersion(t *testing.T) {
 	v := Version()
-	if v != "0.2.7" {
-		t.Errorf(msgFail, "Version", "0.2.7", v)
+	if v != "0.2.8" {
+		t.Errorf(msgFail, "Version", "0.2.8", v)
 	}
 }
