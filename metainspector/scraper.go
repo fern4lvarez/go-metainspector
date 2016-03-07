@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"go.marzhillstudios.com/pkg/go-html-transform/h5"
+	"bitbucket.org/zaphar/go-html-transform/h5"
 	"golang.org/x/net/html"
 )
 
