@@ -20,7 +20,7 @@ go get -u github.com/fern4lvarez/go-metainspector/metainspector
 $ go test -v -cover ./...
 ```
 
-##Usage
+## Usage
 
 ### API
 
@@ -108,10 +108,10 @@ $ go-metainspector -u www.cloudcontrol.com -all
 ### Web
 You can use go-metainspector via web. Check out and run the [`go-metainspector-site`](https://github.com/fern4lvarez/go-metainspector-site) or just try it out: http://gometainspector.cloudcontrolled.com
 
-##Contribute!
+## Contribute!
 You all are welcome to take a seat and make a contribution to this repo: reviews, issues, feature suggestions, possible code or functionality enhancements... Everything is appreciated!
 
-##TODO (aka Nice To Have)
+## TODO (aka Nice To Have)
 * Extend documentation
 * Write a CHANGELOG
 * Mock http requests to speed up unit tests
@@ -120,5 +120,5 @@ You all are welcome to take a seat and make a contribution to this repo: reviews
 * Set Timeout optionally (now is 20 secs)
 * Your suggestion <HERE>
 
-##License
+## License
 go-metainspector is MIT licensed, see [here](https://github.com/fern4lvarez/go-metainspector/blob/master/LICENSE)
